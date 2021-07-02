@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteBoard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="tools">
+        <div class="tool-button">
+            <i class="fas fa-bars"></i>
+            
+        </div>
+        <div class="toolbox add-animation">
+            <div class="tool active-tool" id="pencil">
+                <img src="./resources-master/resources-master/NewIcons/Black_Pencil.svg" alt="">
+                <div class="tool-options hide " id="pencil-options">
+                    <input type="range" id="pencilSize" min="1" max="40" value="1">
+                    <div class="pencil-colors">
+                        <div class="red"></div>
+                        <div class="blue"></div>
+                        <div class="yellow"></div>
+                        <div class="black"></div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="tool" id="eraser">
+                <img src="./resources-master/resources-master/NewIcons/Eraser.svg" alt="">
+                <div class="tool-options hide" id="eraser-options">
+                    <input type="range" id="eraserSize" min="1" max="40" value="1">
+                </div>
+                
+            </div>
+            <div class="tool" id="sticky">
+                <img src="./resources-master/resources-master/NewIcons/StickyNote.svg" alt="">
+            </div>
+            <div class="tool" id="upload">
+                <img src="./resources-master/resources-master/NewIcons/Photo.svg" alt="">
+                <input type="file" id="photoUpload" style="display: none;">
+            </div>
+             
+            <div class="tool" id="download">
+                <img src="./resources-master/resources-master/NewIcons/Download.svg" alt="">
+            </div>
+            <div class="tool" id="undo">
+                <img src="./resources-master/resources-master/NewIcons/Undo.svg" alt="">
+            </div>
+            <div class="tool" id="redo">
+                <img src="./resources-master/resources-master/NewIcons/Redo.svg" alt="">
+            </div>
+            </div>
+            
+
+        </div>
+    </div>
+    <div class="content">
+        <canvas id="canvas"></canvas>
+    </div>
+    
+    <!-- <div class="sticky">
+        <div class="sticky-header">
+            <div class="minimize"></div>
+            <div class="close"></div>
+          </div>
+          <div class="sticky-content">
+            <textarea name="stickybox" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div> -->
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js" integrity="sha512-iZIBSs+gDyTH0ZhUem9eQ1t4DcEn2B9lHxfRMeGQhyNdSUz+rb+5A3ummX6DQTOIs1XK0gOteOg/LPtSo9VJ+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+const socket = io.connect("https://whiteboard-server1.herokuapp.com/");
+
+</script>
+<script src="./script.js"></script>
+<script src="./tools.js"></script>
+<script src="./sticky.js"></script>
+<script src="./img.js"></script>
+<script src="./createSticky.js"></script>
+<script src="./animation.js"></script>
+<script src="./socket.js"></script>
+<!-- <script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+ctx.beginPath();
+ctx.moveTo(10,10);
+ctx.lineTo(100,10);
+ctx.stroke();
+
+</script> -->
+</html>
